@@ -46,19 +46,15 @@
     <header id="header"></header>
     <aside id="sidebar"></aside>
 
-    <script>
-        fetch('/users,html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            })
-            .catch(error => console.error('Error loading header:', error));
-    </script>
-
     <script type="module">
         // use a relative module specifier so the browser can resolve the file
         import { loadLayout } from './layout/layout.js';
         loadLayout();
+    </script>
+
+    <script type="module" src="js/views/users.js">
+        import { loadUsersView } from './views/users.js';
+        loadUsersView();
     </script>
  </div>
 
