@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon.png">
     <title>AQRBS | ARCHITECTURES AND QUALITY SURVEYOR REGISTRATION BOARD SYSTEM</title>
     <!-- Bootstrap Core CSS -->
-    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
@@ -26,16 +26,16 @@
 </head>
 <body class="fix-sidebar fix-header card-no-border">
 
-     <script src="../assets/plugins/jquery/jquery.min.js"></script>
-      <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+     <script src="/assets/plugins/jquery/jquery.min.js"></script>
+      <script src="/assets/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/jquery.slimscroll.js"></script>
     <script src="js/waves.js"></script>
     <script src="js/sidebarmenu.js"></script>
-    <script src="../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="../assets/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
      <script src="js/custom.min.js"></script>
-    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
         
         <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
@@ -45,6 +45,15 @@
     <!-- placeholders for dynamic layout insertion -->
     <header id="header"></header>
     <aside id="sidebar"></aside>
+
+    <script>
+        fetch('/users,html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
 
     <script type="module">
         // use a relative module specifier so the browser can resolve the file
