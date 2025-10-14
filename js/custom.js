@@ -21,7 +21,7 @@ $(function () {
             else {
                 $("body").removeClass("mini-sidebar");
                 $('.navbar-brand span').show();
-                //$(".sidebartoggler i").removeClass("ti-menu");
+                $(".sidebartoggler i").removeClass("ti-menu");
             }
 
             var height = ((window.innerHeight > 0) ? window.innerHeight : this.screen.height) - 1;
