@@ -91,7 +91,7 @@
         <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-    </div>
+        </div>
  <div id="main-wrapper">    
     <!-- placeholders for dynamic layout insertion -->
     <header id="header"></header>
@@ -99,18 +99,13 @@
     <div class="page-wrapper">
         <div class="container-fluid" id="content-area">
             <!-- Dynamic content will be loaded here -->
-             <hh1>Welcome to AQRBS</h1>
+             <h1>Welcome to AQRBS</h1>
         </div>
 
  </div>
 <script type="module">
-        // use a relative module specifier so the browser can resolve the file
         import { loadLayout } from './layout/layout.js';
         loadLayout();
     </script>
-
-    <script type="module" src="js/views/users.js">
-        import { loadUsersView } from './views/users.js';
-        loadUsersView();
-    </script>
+<script src="js/utils/dom.js"></script>
 </body>
