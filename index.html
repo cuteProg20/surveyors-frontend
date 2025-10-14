@@ -14,7 +14,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="css/colors/blue.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -23,19 +23,63 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<style>
+    /* Ensure the sidebar fills the height */
+.left-sidebar {
+    position: absolute;
+    width: 240px;
+    height: 100%;
+    top: 0px;
+    z-index: 20;
+    padding-top: 60px;
+    background: #fff;
+    -webkit-box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08)
+}
+/* This enables scrolling inside the menu area */
+.scroll-sidebar {
+  height: calc(100vh - 60px); /* leave space for header if any */
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Optional: custom scrollbar look */
+.scroll-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll-sidebar::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}
+</style>
 </head>
 <body class="fix-sidebar fix-header card-no-border">
 
      <script src="/assets/plugins/jquery/jquery.min.js"></script>
-      <script src="/assets/plugins/bootstrap/js/popper.min.js"></script>
+      <!-- <script src="/assets/plugins/bootstrap/js/popper.min.js"></script> -->
+       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/jquery.slimscroll.js"></script>
     <script src="js/waves.js"></script>
+    <script src="js/custom.js"></script>
     <script src="js/sidebarmenu.js"></script>
     <script src="/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="/assets/plugins/sparkline/jquery.sparkline.min.js"></script>
      <script src="js/custom.min.js"></script>
     <script src="/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script>
+            $(document).ready(function() {
+              $('#sidebarnav .has-arrow').on('click', function(e) {
+                  e.preventDefault();
+                    const $this = $(this);
+
+                    // Collapse any other open menus at same level
+                    $this.parent().siblings().find('ul.collapse.show').slideUp().removeClass('show');
+
+                    // Toggle current
+                    $this.next('ul').slideToggle().toggleClass('show');
+                });
+                });
+    </script>
         
         <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
