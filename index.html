@@ -47,11 +47,32 @@
 </style>
 </head>
 <body class="fix-sidebar fix-header card-no-border">
+        
+        <div class="preloader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
+        </div>
+ <div id="main-wrapper">    
+    <!-- placeholders for dynamic layout insertion -->
+    <header id="header"></header>
+    <aside id="sidebar"></aside>
+    <div class="page-wrapper">
+        <div class="container-fluid" id="content-area">
+            <!-- Dynamic content will be loaded here -->
+             <script type="module">
+                import  { loadPage } from './utils/dom.js';
+                loadPage();
+            </script>
+        </div>
 
-     <script src="/assets/plugins/jquery/jquery.min.js"></script>
-      <!-- <script src="/assets/plugins/bootstrap/js/popper.min.js"></script> -->
-       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+ </div>
+<script type="module">
+        import { loadLayout } from './layout/layout.js';
+        loadLayout();
+    </script>
+<script src="/assets/plugins/jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/jquery.slimscroll.js"></script>
     <script src="js/waves.js"></script>
     <script src="js/custom.js"></script>
@@ -63,16 +84,6 @@
     <script src="/assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            // Optional: toggle 'active' class on parent li
-            $('.sidebar-nav .has-arrow').on('click', function () {
-                var $parentLi = $(this).closest('li');
-                $parentLi.toggleClass('active');
-            });
-        });
-    </script>
     <script>
             $(document).ready(function() {
               $('#sidebarnav .has-arrow').on('click', function(e) {
@@ -87,25 +98,4 @@
                 });
                 });
     </script>
-        
-        <div class="preloader">
-        <svg class="circular" viewBox="25 25 50 50">
-            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" /> </svg>
-        </div>
- <div id="main-wrapper">    
-    <!-- placeholders for dynamic layout insertion -->
-    <header id="header"></header>
-    <aside id="sidebar"></aside>
-    <div class="page-wrapper">
-        <div class="container-fluid" id="content-area">
-            <!-- Dynamic content will be loaded here -->
-             <h1>Welcome to AQRBS</h1>
-        </div>
-
- </div>
-<script type="module">
-        import { loadLayout } from './layout/layout.js';
-        loadLayout();
-    </script>
-<script src="js/utils/dom.js"></script>
 </body>
