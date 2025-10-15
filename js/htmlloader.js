@@ -10,8 +10,6 @@ async function loadHTML(elementId, filePath) {
 
 // Load layout components
 document.addEventListener("DOMContentLoaded", async () => {
-//   await loadHTML("header", "layouts/header.html");
-//   await loadHTML("sidebar", "layouts/sidebar.html");
 
   // Default page
   loadHTML("main-content", "pages/dashboard.html");
