@@ -9486,3 +9486,123 @@ input[type=checkbox]:not(:disabled).tabbed:focus~.lever:after, input[type=checkb
 .switch label input[type=checkbox]:checked+.lever.switch-col-white:after {
     background-color: #ffffff
 }
+.footable-container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.footable-header h2 {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.footable-header p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.entries-selector {
+  margin-bottom: 15px;
+}
+
+.entries-selector select {
+  padding: 4px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.footable-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.footable-table th {
+  background-color: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+  font-weight: bold;
+}
+
+.footable-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.expandable-row {
+  cursor: pointer;
+}
+
+.footable-toggle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #666;
+  margin-right: 8px;
+  transition: transform 0.3s;
+}
+
+.expandable-row.expanded .footable-toggle {
+  transform: rotate(180deg);
+}
+
+.footable-detail-row {
+  display: none;
+  background-color: #f8f9fa;
+}
+
+.footable-detail-row.show {
+  display: table-row;
+}
+
+.footable-details {
+  padding: 15px;
+}
+
+.footable-details p {
+  margin: 5px 0;
+}
+
+.footable-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.pagination-info {
+  color: #666;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination-btn:hover:not(.disabled) {
+  background-color: #e9ecef;
+}
+
+.pagination-btn.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-btn.disabled {
+  color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
